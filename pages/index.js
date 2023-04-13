@@ -37,7 +37,7 @@ export default function Home({articles}) {
 }
 
 export async function getStaticProps(){ //lo ejecuta sólo una vez en build time (o para refrescar la página) y lo pre renderiza
-  const response= await fetch('https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=9d9d32786f874f4db6b102863de6cf09')
+  const response= await fetch('https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey' + process.env.APIKEY)
   const {articles}= await response.json()
    return {
     props:{
@@ -47,7 +47,7 @@ export async function getStaticProps(){ //lo ejecuta sólo una vez en build time
 }
 
 // export async function getServerSideProps(context){//lo ejecuta en cada request, es conveniente usarlo si necesitas que los datos sean muy segundo a segundo, o si tiene demasiado datos dinámicos
-//   const response= await fetch('https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=9d9d32786f874f4db6b102863de6cf09')
+//   const response= await fetch('https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey' + process.env.APIKEY)
 //   const {articles}= await response.json()
 //    return {
 //     props:{
@@ -55,3 +55,4 @@ export async function getStaticProps(){ //lo ejecuta sólo una vez en build time
 //     }
 //    }
 // }
+
