@@ -26,12 +26,12 @@ export default function About(){
                             </div> */}
 
                         </div>
-                        <div className={styles.image}>
+                        {/* <div className={styles.image}>
                             <Image>
                                 {/* ver */}
-                            </Image>
+                            {/* </Image>
 
-                        </div>
+                        </div> */} 
 
                     </div>
 
